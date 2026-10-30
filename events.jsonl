@@ -6,3 +6,4 @@
 {"time": "2026-10-30 15:04:54", "source": "test", "confidence": null, "message": "EPILEX test alert. Please ignore.", "delivery": {"alarm": "ok", "push": "skipped (NTFY_TOPIC not set)", "apprise": "skipped (APPRISE_URLS not set)"}}
 {"time": "2026-10-30 15:06:22", "source": "test", "confidence": null, "message": "EPILEX test alert. Please ignore.", "delivery": {"alarm": "ok", "push": "skipped (NTFY_TOPIC not set)", "apprise": "skipped (APPRISE_URLS not set)"}}
 {"time": "2026-10-30 15:09:07", "source": "test", "confidence": null, "message": "EPILEX test alert. Please ignore.", "delivery": {"alarm": "ok", "push": "skipped (NTFY_TOPIC not set)", "apprise": "skipped (APPRISE_URLS not set)"}}
+{"time": "2026-10-30 15:16:17", "source": "test", "confidence": null, "message": "EPILEX test alert. Please ignore.", "delivery": {"alarm": "ok", "push": "skipped (NTFY_TOPIC not set)", "apprise": "skipped (APPRISE_URLS not set)"}}
