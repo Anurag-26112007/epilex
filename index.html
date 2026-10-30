@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EPILEX | A Signal Detected, A Life Protected</title>
+<meta name="description" content="EPILEX: open-source, software-only seizure detection and instant caregiver alerts. Team The Debuggers, University of Lucknow.">
+<style>
+  :root{
+    --bg:#07161F; --panel:#0D2431; --line:#1B3A4B; --text:#E6F1F5; --muted:#8FB0BF;
+    --teal:#38E0C8; --amber:#FFB547;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  a{color:var(--teal);text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  nav{position:sticky;top:0;background:rgba(7,22,31,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav b{letter-spacing:.14em;color:var(--teal)}
+  nav .links a{margin-left:20px;color:var(--muted);font-size:14px}
+  nav .links a:hover{color:var(--text)}
+  header{padding:84px 0 56px;text-align:center}
+  header h1{font-size:clamp(48px,10vw,92px);letter-spacing:.12em;color:var(--teal);line-height:1}
+  header .tag{margin-top:14px;font-size:clamp(18px,3vw,24px);color:var(--amber);font-style:italic}
+  header p.lead{max-width:640px;margin:22px auto 0;color:var(--muted)}
+  .btns{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{padding:11px 22px;border-radius:8px;font-weight:600;border:1px solid var(--teal)}
+  .btn.primary{background:var(--teal);color:#042;}
+  .btn.ghost{color:var(--teal)}
+  .wave{display:block;width:100%;height:80px;margin-top:40px}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-size:28px;margin-bottom:8px}
+  h2 span{color:var(--teal)}
+  .sub{color:var(--muted);margin-bottom:28px;max-width:720px}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .card h3{font-size:17px;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:15px}
+  .stat{font-size:36px;font-weight:700;color:var(--amber)}
+  .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;justify-content:center}
+  .step{flex:1 1 170px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+  .step b{display:block;color:var(--teal);margin-bottom:4px}
+  .step small{color:var(--muted)}
+  .arrow{align-self:center;color:var(--amber);font-size:22px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--teal);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+  tr:last-child td{border-bottom:0}
+  td:first-child{font-weight:600;white-space:nowrap}
+  .team{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .team .card b{display:block}
+  .team .card small{color:var(--muted)}
+  .note{margin-top:24px;padding:14px 16px;border-left:3px solid var(--amber);background:var(--panel);color:var(--muted);font-size:14px;border-radius:0 8px 8px 0}
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  @media(max-width:640px){nav .links{display:none}.arrow{display:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <b>EPILEX</b>
+  <div class="links">
+    <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#tech">Tech</a><a href="#team">Team</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <h1>EPILEX</h1>
+  <div class="tag">A Signal Detected, A Life Protected</div>
+  <p class="lead">A free, open-source, software-only system that detects seizure activity from EEG signals or a simple webcam and alerts caregivers within seconds.</p>
+  <div class="btns">
+    <a class="btn primary" id="videoBtn" href="#" target="_blank" rel="noopener">Watch demo video</a>
+    <a class="btn ghost" href="https://github.com/Anurag-26112007/epilex" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+  <svg class="wave" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 40 L120 40 L140 40 L155 12 L170 68 L185 40 L330 40 L350 40 L365 18 L380 62 L395 40 L560 40 L575 40 L590 4 L605 76 L620 4 L635 76 L650 4 L665 76 L680 40 L1000 40"
+          fill="none" stroke="#38E0C8" stroke-width="2.5" stroke-linejoin="round"/>
+  </svg>
+</div></header>
+
+<section id="problem"><div class="wrap">
+  <h2>The <span>problem</span></h2>
+  <p class="sub">Seizures strike without warning, and help often arrives late, especially when the person is asleep or alone.</p>
+  <div class="grid">
+    <div class="card"><div class="stat">10-12M</div><p>people live with epilepsy in India.</p></div>
+    <div class="card"><div class="stat">Night</div><p>Unwitnessed seizures can lead to serious injury or SUDEP.</p></div>
+    <div class="card"><div class="stat">Cost</div><p>Clinical wearables are expensive and out of reach for many households.</p></div>
+    <div class="card"><div class="stat">Gap</div><p>Research EEG models detect, but never alert anyone.</p></div>
+  </div>
+  <div class="note">The gap: no free, live, software-only system connects seizure detection to caregiver alerts.</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it <span>works</span></h2>
+  <p class="sub">Two inputs, one decision engine, many alert channels.</p>
+  <div class="flow">
+    <div class="step"><b>1. Input</b><small>EEG replay (public CHB-MIT data) or live webcam</small></div><div class="arrow">&rarr;</div>
+    <div class="step"><b>2. Detect</b><small>EEG model on 2-second windows, or MediaPipe body tracking</small></div><div class="arrow">&rarr;</div>
+    <div class="step"><b>3. Confirm</b><small>Needs several consecutive hits, then a cooldown</small></div><div class="arrow">&rarr;</div>
+    <div class="step"><b>4. Alert</b><small>Siren, push, email, SMS, plus a caregiver note in Hindi or English</small></div>
+  </div>
+  <div class="grid" style="margin-top:24px">
+    <div class="card"><h3>Mode A: EEG</h3><p>Brain-signal windows are classified as seizure or normal with a confidence score. Evaluated on patients the model has never seen.</p></div>
+    <div class="card"><h3>Mode B: Webcam</h3><p>Tracks body landmarks and looks for sustained, rhythmic shaking of several limbs. Video is processed locally and never stored.</p></div>
+    <div class="card"><h3>Caregiver note</h3><p>A local open-weight model rephrases a vetted first-aid template. It never invents new medical advice.</p></div>
+  </div>
+</div></section>
+
+<section id="tech"><div class="wrap">
+  <h2>Open-source <span>stack</span></h2>
+  <p class="sub">Every layer is free to run, inspect and improve.</p>
+  <table>
+    <tr><th>Layer</th><th>Tools</th><th>Why</th></tr>
+    <tr><td>Data</td><td>CHB-MIT Scalp EEG (PhysioNet)</td><td>Open licence, anonymised</td></tr>
+    <tr><td>Signal processing</td><td>MNE-Python, SciPy, NumPy</td><td>Reads EDF, filters 0.5-40 Hz, windows</td></tr>
+    <tr><td>EEG model</td><td>scikit-learn random forest baseline, PyTorch</td><td>Light enough for a laptop</td></tr>
+    <tr><td>Camera mode</td><td>MediaPipe Pose, OpenCV</td><td>Open body tracking, runs locally</td></tr>
+    <tr><td>Caregiver note</td><td>Open-weight LLM via Ollama</td><td>Local and private, Hindi and English</td></tr>
+    <tr><td>Alerts</td><td>Apprise, ntfy, SMTP</td><td>One engine, many channels</td></tr>
+    <tr><td>Dashboard</td><td>Streamlit</td><td>Fast to build, live updates</td></tr>
+  </table>
+  <div class="note">EPILEX is an assistive research prototype, not a medical device, and it does not diagnose. The camera mode is demonstrated on acted movement only. Results are reported exactly as measured.</div>
+</div></section>
+
+<section id="team"><div class="wrap">
+  <h2>Team <span>The Debuggers</span></h2>
+  <p class="sub">B.Tech CSE, 1st year. Faculty of Engineering &amp; Technology, University of Lucknow. Built for Hacktoberfest FoET 2026.</p>
+  <div class="team">
+    <div class="card"><b>Anurag Saini</b><small>Team Leader</small></div>
+    <div class="card"><b>Ayushya Sahu</b><small>Team Member</small></div>
+    <div class="card"><b>Anshika Tiwari</b><small>Team Member</small></div>
+    <div class="card"><b>Ashutosh Mishra</b><small>Team Member</small></div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="wrap">EPILEX &middot; A Signal Detected, A Life Protected &middot;
+  <a href="https://github.com/Anurag-26112007/epilex" target="_blank" rel="noopener">GitHub</a></div>
+</footer>
+
+<script>
+  // Paste your demo video link between the quotes (Google Drive / YouTube). Make sure sharing is "Anyone with the link".
+  var DEMO_VIDEO_URL = "";
+  var b = document.getElementById("videoBtn");
+  if (DEMO_VIDEO_URL) { b.href = DEMO_VIDEO_URL; } else { b.style.display = "none"; }
+</script>
+</body>
+</html>
